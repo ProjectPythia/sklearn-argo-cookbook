@@ -1,7 +1,40 @@
-name: cookbook-dev
+name: skargo
 channels:
   - conda-forge
 dependencies:
   - jupyter-book
   - jupyterlab
   - sphinx-pythia-theme
+  - python=3.9
+  - numpy
+  - scipy
+
+    # Data packages
+  - pandas
+  - xarray
+  - jupyter
+  - netcdf4
+  - gsw
+
+  # ML Packages
+  - scikit-learn
+
+  # Images
+  - cmocean
+  # - geoviews
+  # - holoviews=1.14.2
+  # - panel=0.11.1
+  # - hvplot=0.7.1
+  - plotly
+  - matplotlib
+  - seaborn 
+  - haversine
+  - geopandas
+  # - ipykernel
+  - pygam
+  - cartopy
+  - imageio
+  - rasterio
+  - hyperopt
+  - dataframe_image
+
