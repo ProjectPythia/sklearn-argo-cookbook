@@ -2,9 +2,9 @@
 
 # (Replace_with_your_title) Cookbook
 
-[![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
-[![DOI](https://zenodo.org/badge/475509405.svg)](https://zenodo.org/badge/latestdoi/475509405)
+[![nightly-build](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?labpath=notebooks)
+[![DOI](https://zenodo.org/badge/808693731.svg)](https://zenodo.org/badge/latestdoi/808693731)
 
 This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
 
@@ -18,8 +18,8 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythia/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythia/cookbook-template" />
+<a href="https://github.com/song-sangmin/sklearn-argo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=song-sangmin/sklearn-argo" />
 </a>
 
 ## Structure
