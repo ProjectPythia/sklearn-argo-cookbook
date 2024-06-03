@@ -15,6 +15,7 @@ dependencies:
   - jupyter
   - netcdf4
   - gsw
+  - argopy
 
   # ML Packages
   - scikit-learn
