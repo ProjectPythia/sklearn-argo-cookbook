@@ -1,12 +1,16 @@
 <img src="thumbnail.png" alt="thumbnail" width="300"/>
 
-# (Replace_with_your_title) Cookbook
+# Scikit-learn with Argo Observations Cookbook
 
 [![nightly-build](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/808693731.svg)](https://zenodo.org/badge/latestdoi/808693731)
 
-This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
+This Project Pythia Cookbook covers two objectives:
+
+1. Accessing publicly available, quality-controlled [Biogeochemical-Argo](https://biogeochemical-argo.org/) ocean observations using [Argopy](https://argopy.readthedocs.io/en/latest/index.html)
+2. Demonstrating uses of [scikit-learn](https://scikit-learn.org/), a powerful and accessible Python package for machine learning.
+
 
 ## Motivation
 
@@ -14,7 +18,7 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ## Authors
 
-[First Author](@first-author), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+[Song Sangmin (@song-sangmin), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
 
 ### Contributors
 
@@ -25,6 +29,12 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 ## Structure
 
 (State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
+
+This cookbook is broken up into __ sections: 
+
+1. Accessing BGC-Argo data with Argopy
+2. Applying scikit-learn to prepare data for machine learning
+3. Using sckikit-learn to develop regression models (e.g. RFR, XGBoost)
 
 ### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
 
