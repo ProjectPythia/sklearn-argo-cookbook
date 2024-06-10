@@ -8,7 +8,7 @@
 
 This Project Pythia Cookbook covers two objectives:
 
-1. Accessing publicly available, quality-controlled [Biogeochemical-Argo](https://biogeochemical-argo.org/) ocean observations using [Argopy](https://argopy.readthedocs.io/en/latest/index.html)
+1. Accessing publicly available, quality-controlled [Biogeochemical-Argo](https://biogeochemical-argo.org/) ocean observations
 2. Demonstrating uses of [scikit-learn](https://scikit-learn.org/), a powerful and accessible Python package for machine learning.
 
 
@@ -36,11 +36,11 @@ This cookbook is broken up into __ sections:
 2. Applying scikit-learn to prepare data for machine learning
 3. Using sckikit-learn to develop regression models (e.g. RFR, XGBoost)
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
+### Section 1: Accessing BGC-Argo ( Replace with the title of this section, e.g. "Foundations" )
 
 (Add content for this section, e.g., "The foundational content includes ... ")
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
+### Section 2: Scikit-learn ( Replace with the title of this section, e.g. "Example workflows" )
 
 (Add content for this section, e.g., "Example workflows include ... ")
 
