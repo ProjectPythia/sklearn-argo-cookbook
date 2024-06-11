@@ -9,7 +9,7 @@
 This Project Pythia Cookbook covers two objectives:
 
 1. Accessing publicly available, quality-controlled [Biogeochemical-Argo](https://biogeochemical-argo.org/) ocean observations
-2. Demonstrating uses of [scikit-learn](https://scikit-learn.org/), a powerful and accessible Python package for machine learning.
+2. Demonstrating uses of [scikit-learn](https://scikit-learn.org/), a powerful Python package for machine learning.
 
 
 ## Motivation
