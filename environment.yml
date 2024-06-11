@@ -1,4 +1,4 @@
-name: skargo
+name: sklearn-argo-dev
 channels:
   - conda-forge
 dependencies:
