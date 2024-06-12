@@ -4,6 +4,11 @@ parts:
   - caption: Preamble
     chapters:
       - file: notebooks/how-to-cite
-  - caption: Introduction
+  - caption: Argo Foundations
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/argo-introduction
+      - file: notebooks/argo-access
+  - caption: Scikit-learn Workflows on Argo
+    chapters:
+      - file: notebooks/sklearn-clustering
+      - file: notebooks/sklearn-regression
