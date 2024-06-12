@@ -1,6 +1,6 @@
 <img src="thumbnail.png" alt="thumbnail" width="300"/>
 
-# Scikit-learn with Argo Observations Cookbook
+# Scikit-learn on Argo Observations
 
 [![nightly-build](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?labpath=notebooks)
@@ -18,7 +18,7 @@ This Project Pythia Cookbook covers two objectives:
 
 ## Authors
 
-[Song Sangmin (@song-sangmin), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+[Song Sangmin](@song-sangmin), [Michael Chen](@second-author).
 
 ### Contributors
 
@@ -30,17 +30,16 @@ This Project Pythia Cookbook covers two objectives:
 
 (State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
 
-This cookbook is broken up into __ sections: 
+This cookbook is broken up into two main sections. 
 
-1. Accessing BGC-Argo data with Argopy
-2. Applying scikit-learn to prepare data for machine learning
-3. Using sckikit-learn to develop regression models (e.g. RFR, XGBoost)
+1. Argo Foundations
+2. Scikit-learn Workflows
 
-### Section 1: Accessing BGC-Argo ( Replace with the title of this section, e.g. "Foundations" )
+### Section 1: Argo Foundations
 
 (Add content for this section, e.g., "The foundational content includes ... ")
 
-### Section 2: Scikit-learn ( Replace with the title of this section, e.g. "Example workflows" )
+### Section 2: Scikit-learn Workflows
 
 (Add content for this section, e.g., "Example workflows include ... ")
 
