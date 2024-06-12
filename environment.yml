@@ -8,6 +8,7 @@ dependencies:
   - python=3.9
   - numpy
   - scipy
+  - pip 
 
   # Data packages
   - pandas
@@ -34,3 +35,5 @@ dependencies:
   - hyperopt
   - dataframe_image
 
+  - pip: 
+    - argovisHelpers==0.0.26
