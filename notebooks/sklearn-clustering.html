@@ -47,7 +47,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -77,11 +77,10 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project Pythia Notebook Template" href="sklearn-regression.html" />
-    <link rel="prev" title="Project Pythia Notebook Template" href="argo-access.html" />
+    <link rel="prev" title="Regression Modeling on Argo using Scikit-learn" href="sklearn-regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="12 June 2024"/>
+    <meta name="docbuild:last-update" content="14 June 2024"/>
   </head>
   
   
@@ -360,7 +359,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Scikit-learn with Argo Observations Cookbook
+                    Scikit-learn on Argo Observations
                 </a>
             </li>
         </ul>
@@ -370,13 +369,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Argo Foundations</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="argo-introduction.html">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="argo-access.html">Project Pythia Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="argo-introduction.html">Introduction to Argo Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="argo-access.html">Accessing Argo Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scikit-learn Workflows on Argo</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sklearn-regression.html">Regression Modeling on Argo using Scikit-learn</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sklearn-regression.html">Project Pythia Notebook Template</a></li>
 </ul>
 
     </div>
@@ -406,12 +405,7 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <p>Let’s start here! If you can directly link to an image relevant to your notebook, such as <a class="reference external" href="https://github.com/numpy/numpy/blob/main/doc/source/_static/numpylogo.svg">canonical logos</a>, do so here at the top of your notebook. You can do this with Markdown syntax,</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">![&lt;image</span> <span class="pre">title&gt;](http://link.com/to/image.png</span> <span class="pre">&quot;image</span> <span class="pre">alt</span> <span class="pre">text&quot;)</span></code></p>
-</div></blockquote>
-<p>or edit this cell to see raw HTML <code class="docutils literal notranslate"><span class="pre">img</span></code> demonstration. This is preferred if you need to shrink your embedded image. <strong>Either way be sure to include <code class="docutils literal notranslate"><span class="pre">alt</span></code> text for any embedded images to make your content more accessible.</strong></p>
-<p><a class="reference internal" href="../_images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="../_images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
+  <p><img alt="Scikit-learn" src="https://seeklogo.com/images/S/scikit-learn-logo-8766D07E2E-seeklogo.com.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="project-pythia-notebook-template">
 <h1>Project Pythia Notebook Template<a class="headerlink" href="#project-pythia-notebook-template" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <p>Next, title your notebook appropriately with a top-level Markdown header, <code class="docutils literal notranslate"><span class="pre">#</span></code>. Do not use this level header anywhere else in the notebook. Our book build process will use this title in the navbar, table of contents, etc. Keep it short, keep it descriptive. Follow this with a <code class="docutils literal notranslate"><span class="pre">---</span></code> cell to visually distinguish the transition to the prerequisites section.</p>
@@ -472,7 +466,29 @@
 <p>Begin your body of content with another <code class="docutils literal notranslate"><span class="pre">---</span></code> divider before continuing into this section, then remove this body text and populate the following code cell with all necessary Python imports <strong>up-front</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import sys</span>
+<span class="c1"># import glob</span>
+<span class="c1"># import pandas as pd</span>
+<span class="c1"># import numpy as np</span>
+
+<span class="c1"># from argopy import DataFetcher  # This is the class to work with Argo data</span>
+<span class="c1"># from argopy import ArgoIndex  #  This is the class to work with Argo index</span>
+<span class="c1"># from argopy import ArgoNVSReferenceTables  # This is the class to retrieve data from Argo reference tables</span>
+<span class="c1"># from argopy import ArgoColors  # This is a class with usefull pre-defined colors</span>
+<span class="c1"># from argopy.plot import scatter_map, scatter_plot  # This is a function to easily make maps </span>
+
+<span class="c1"># # Make a fresh start</span>
+<span class="c1"># import argopy</span>
+<span class="c1"># argopy.reset_options()</span>
+<span class="c1"># argopy.clear_cache()</span>
+<span class="c1"># argopy.set_options(cachedir=&#39;cache_bgc&#39;)</span>
+
+<span class="c1"># #</span>
+<span class="c1"># import matplotlib as mpl</span>
+<span class="c1"># from matplotlib import pyplot as plt</span>
+<span class="c1"># import cmocean</span>
+<span class="c1"># import xarray as xr</span>
+<span class="c1"># xr.set_options(display_expand_attrs = False)</span>
 </pre></div>
 </div>
 </div>
@@ -483,17 +499,79 @@
 <p>This is where you begin your first section of material, loosely tied to your objectives stated up front. Tie together your notebook as a narrative, with interspersed Markdown text, images, and more as necessary,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># as well as any and all of your code cells</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import logging</span>
+<span class="c1"># logging.getLogger(&quot;matplotlib&quot;).setLevel(logging.ERROR)</span>
+<span class="c1"># logging.getLogger(&quot;pyproj&quot;).setLevel(logging.ERROR)</span>
+<span class="c1"># logging.getLogger(&quot;fsspec&quot;).setLevel(logging.ERROR)</span>
+<span class="c1"># logging.getLogger(&quot;parso&quot;).setLevel(logging.ERROR)</span>
+<span class="c1"># logging.getLogger(&quot;asyncio&quot;).setLevel(logging.ERROR)</span>
+<span class="c1"># DEBUGFORMATTER = &#39;%(asctime)s [%(levelname)s] [%(name)s] %(filename)s:%(lineno)d: %(message)s&#39;</span>
+<span class="c1"># logging.basicConfig(</span>
+<span class="c1">#     level=logging.DEBUG,</span>
+<span class="c1">#     format=DEBUGFORMATTER,</span>
+<span class="c1">#     datefmt=&#39;%I:%M:%S %p&#39;,</span>
+<span class="c1">#     handlers=[logging.FileHandler(&quot;nb-docs.log&quot;, mode=&#39;w&#39;)]</span>
+<span class="c1"># )</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</div>
+</section>
+<section id="load-a-dataset-using-argopy">
+<h2>Load a dataset using argopy<a class="headerlink" href="#load-a-dataset-using-argopy" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<section id="working-off-the-argopy-tutorial">
+<h3>Working off the argopy tutorial<a class="headerlink" href="#working-off-the-argopy-tutorial" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>https://nbviewer.org/github/euroargodev/argopy/blob/master/docs/examples/BGC_region_float_data.ipynb</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Format: [lon_min, lon_max, lat_min, lat_max, pres_min, pres_max, datim_min, datim_max]</span>
+<span class="c1"># BOX = [-56, -45, 54, 60, 0, 2000, &#39;2022-01&#39;, &#39;2023-01&#39;]</span>
+<span class="c1"># # BOX = [-56, -45, 54, 60, 0, 2000, &#39;2022-09&#39;, &#39;2023-01&#39;]</span>
+<span class="c1"># BOX = [-56, -45, 54, 60, 0, 500, &#39;2019-01&#39;, &#39;2023-01&#39;]</span>
+<span class="c1"># # BOX = [-75, -62, 38, 42, 0, 2000, &#39;2021-01&#39;, &#39;2022-01&#39;]</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Select profile in a space/time domain:</span>
+<span class="c1"># index_BOX = [BOX[ii] for ii in [0, 1, 2, 3, 6, 7]]  # We don&#39;t want the pressure axis BOX limits</span>
+<span class="c1"># idx.search_lat_lon_tim(index_BOX)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Get the list of all parameters for this region:</span>
+<span class="c1"># idx.read_params()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # How many different floats in the region:</span>
+<span class="c1"># len(idx.read_wmo())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%time</span>
+<span class="c1"># f = DataFetcher(ds=&#39;bgc&#39;, mode=&#39;expert&#39;, params=&#39;all&#39;,</span>
+<span class="c1">#                 parallel=True, progress=True, cache=False,</span>
+<span class="c1">#                 chunks_maxsize={&#39;time&#39;: 30},</span>
+<span class="c1">#                )</span>
+<span class="c1"># f = f.region(BOX).load()</span>
+<span class="c1"># f</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="a-content-subsection">
 <h3>A content subsection<a class="headerlink" href="#a-content-subsection" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>Divide and conquer your objectives with Markdown subsections, which will populate the helpful navbar in Jupyter Lab and here on the Jupyter Book!</p>
@@ -523,8 +601,8 @@
 <section id="header-levels">
 <h6>header levels<a class="headerlink" href="#header-levels" title="Link to this heading"><i class="fas fa-link"></i></a></h6>
 <p>as well <span class="math notranslate nohighlight">\(m = a * t / h\)</span> text! Similarly, you have access to other <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html"><strong>functionality</strong></a> via MathJax (demo below from link),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc9e163c-1312-4e41-b93a-bb0ebf2b62a1">
-<span class="eqno">(3)<a class="headerlink" href="#equation-cc9e163c-1312-4e41-b93a-bb0ebf2b62a1" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2937a35d-25ae-474b-8039-cc05376a15bb">
+<span class="eqno">(5)<a class="headerlink" href="#equation-2937a35d-25ae-474b-8039-cc05376a15bb" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
 \dot{x} &amp; = \sigma(y-x) \\
 \dot{y} &amp; = \rho x - y - xz \\
 \dot{z} &amp; = -\beta z + xy
@@ -611,22 +689,13 @@
                     
 <div class="prev-next-area">
     <a class="left-prev"
-       href="argo-access.html"
+       href="sklearn-regression.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Project Pythia Notebook Template</p>
+        <p class="prev-next-title">Regression Modeling on Argo using Scikit-learn</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="sklearn-regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Project Pythia Notebook Template</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                   </footer>
@@ -648,7 +717,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-content-section">Your first content section</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-content-section">Your first content section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-dataset-using-argopy">Load a dataset using argopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-off-the-argopy-tutorial">Working off the argopy tutorial</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-content-subsection">A content subsection</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-content-subsection">Another content subsection</a></li>
 </ul>
@@ -686,9 +757,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -713,14 +784,14 @@
       
       <li><a href="https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?urlpath=lab/tree/notebooks/sklearn-clustering.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -877,9 +948,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -914,7 +985,7 @@ By Sangmin Song
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12 June 2024.
+  Last updated on 14 June 2024.
   <br/>
 </p>
   </div>
@@ -968,7 +1039,7 @@ By Sangmin Song
         
           By Sangmin Song.
         
-          Last updated on 12 June 2024.
+          Last updated on 14 June 2024.
         </p>
       </div>
     </div>

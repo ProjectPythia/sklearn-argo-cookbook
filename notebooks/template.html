@@ -47,7 +47,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -79,7 +79,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="12 June 2024"/>
+    <meta name="docbuild:last-update" content="14 June 2024"/>
   </head>
   
   
@@ -360,7 +360,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Scikit-learn with Argo Observations Cookbook
+                    Scikit-learn on Argo Observations
                 </a>
             </li>
         </ul>
@@ -370,13 +370,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Argo Foundations</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="argo-introduction.html">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="argo-access.html">Project Pythia Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="argo-introduction.html">Introduction to Argo Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="argo-access.html">Accessing Argo Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scikit-learn Workflows on Argo</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sklearn-regression.html">Regression Modeling on Argo using Scikit-learn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sklearn-clustering.html">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sklearn-regression.html">Project Pythia Notebook Template</a></li>
 </ul>
 
     </div>
@@ -523,8 +523,8 @@
 <section id="header-levels">
 <h6>header levels<a class="headerlink" href="#header-levels" title="Link to this heading"><i class="fas fa-link"></i></a></h6>
 <p>as well <span class="math notranslate nohighlight">\(m = a * t / h\)</span> text! Similarly, you have access to other <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html"><strong>functionality</strong></a> via MathJax (demo below from link),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-efa5ab1a-83e6-4b80-a060-65851aa4d82b">
-<span class="eqno">()<a class="headerlink" href="#equation-efa5ab1a-83e6-4b80-a060-65851aa4d82b" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-443135e9-d982-451f-9ac7-9d173fdb4066">
+<span class="eqno">()<a class="headerlink" href="#equation-443135e9-d982-451f-9ac7-9d173fdb4066" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
 \dot{x} &amp; = \sigma(y-x) \\
 \dot{y} &amp; = \rho x - y - xz \\
 \dot{z} &amp; = -\beta z + xy
@@ -668,9 +668,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -695,14 +695,14 @@
       
       <li><a href="https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?urlpath=lab/tree/notebooks/template.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -859,9 +859,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -896,7 +896,7 @@ By Sangmin Song
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12 June 2024.
+  Last updated on 14 June 2024.
   <br/>
 </p>
   </div>
@@ -950,7 +950,7 @@ By Sangmin Song
         
           By Sangmin Song.
         
-          Last updated on 12 June 2024.
+          Last updated on 14 June 2024.
         </p>
       </div>
     </div>

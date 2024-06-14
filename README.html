@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Scikit-learn with Argo Observations Cookbook &#8212; Using sklearn with BGC-Argo ocean observations</title>
+    <title>Scikit-learn on Argo Observations &#8212; Using sklearn with BGC-Argo ocean observations</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -80,7 +80,7 @@
     <link rel="next" title="How to Cite This Cookbook" href="notebooks/how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="12 June 2024"/>
+    <meta name="docbuild:last-update" content="14 June 2024"/>
   </head>
   
   
@@ -361,7 +361,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Scikit-learn with Argo Observations Cookbook
+                    Scikit-learn on Argo Observations
                 </a>
             </li>
         </ul>
@@ -371,13 +371,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Argo Foundations</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks/argo-introduction.html">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/argo-access.html">Project Pythia Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/argo-introduction.html">Introduction to Argo Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/argo-access.html">Accessing Argo Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scikit-learn Workflows on Argo</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/sklearn-regression.html">Regression Modeling on Argo using Scikit-learn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/sklearn-clustering.html">Project Pythia Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/sklearn-regression.html">Project Pythia Notebook Template</a></li>
 </ul>
 
     </div>
@@ -408,8 +408,8 @@
                   <article class="bd-article">
                     
   <a class="reference internal image-reference" href="_images/thumbnail.png"><img alt="thumbnail" src="_images/thumbnail.png" style="width: 300px;" /></a>
-<section class="tex2jax_ignore mathjax_ignore" id="scikit-learn-with-argo-observations-cookbook">
-<h1>Scikit-learn with Argo Observations Cookbook<a class="headerlink" href="#scikit-learn-with-argo-observations-cookbook" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="scikit-learn-on-argo-observations">
+<h1>Scikit-learn on Argo Observations<a class="headerlink" href="#scikit-learn-on-argo-observations" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <p><a class="reference external" href="https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/song-sangmin/sklearn-argo/actions/workflows/nightly-build.yaml/badge.svg" /></a>
 <a class="reference external" href="https://binder.projectpythia.org/v2/gh/song-sangmin/sklearn-argo/main?labpath=notebooks"><img alt="Binder" src="https://binder.projectpythia.org/badge_logo.svg" /></a>
 <a class="reference external" href="https://zenodo.org/badge/latestdoi/808693731"><img alt="DOI" src="https://zenodo.org/badge/808693731.svg" /></a></p>
@@ -420,11 +420,11 @@
 </ol>
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>(Add a few sentences stating why this cookbook will be useful. What skills will you, “the chef”, gain once you have reached the end of the cookbook?)</p>
+<p>This cookbook provides an overview of how to use python to access Argo oceanographic data and how to use sklearn to perform machine learning analyses. Argo is a global observatory of <em>in situ</em> robots that autonomously sample the ocean interior. It is an international collaborative effort, and provides a treasure trove of high quality, open-source data. However, there are many different ways to access Argo data, which can get confusing for users. This cookbook highlights some basic workflows to access and work with Argo data.</p>
 </section>
 <section id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>[Song Sangmin (&#64;song-sangmin), <a class="reference internal" href="#&#64;second-author"><span class="xref myst">Second Author</span></a>, etc. <em>Acknowledge primary content authors here</em></p>
+<p><a class="reference internal" href="#&#64;song-sangmin"><span class="xref myst">Song Sangmin</span></a>, <a class="reference internal" href="#&#64;mchen96"><span class="xref myst">Michael Chen</span></a>.</p>
 <section id="contributors">
 <h3>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <a href="https://github.com/song-sangmin/sklearn-argo/graphs/contributors">
@@ -434,20 +434,18 @@
 </section>
 <section id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>(State one or more sections that will comprise the notebook. E.g., <em>This cookbook is broken up into two main sections - “Foundations” and “Example Workflows.”</em> Then, describe each section below.)</p>
-<p>This cookbook is broken up into __ sections:</p>
+<p>This cookbook is broken up into two main sections.</p>
 <ol class="arabic simple">
-<li><p>Accessing BGC-Argo data with Argopy</p></li>
-<li><p>Applying scikit-learn to prepare data for machine learning</p></li>
-<li><p>Using sckikit-learn to develop regression models (e.g. RFR, XGBoost)</p></li>
+<li><p>Argo Foundations</p></li>
+<li><p>Scikit-learn Workflows</p></li>
 </ol>
-<section id="section-1-accessing-bgc-argo-replace-with-the-title-of-this-section-e-g-foundations">
-<h3>Section 1: Accessing BGC-Argo ( Replace with the title of this section, e.g. “Foundations” )<a class="headerlink" href="#section-1-accessing-bgc-argo-replace-with-the-title-of-this-section-e-g-foundations" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “The foundational content includes … “)</p>
+<section id="section-1-argo-foundations">
+<h3>Section 1: Argo Foundations<a class="headerlink" href="#section-1-argo-foundations" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>This section contains two notebooks. argo-introductions.ipynb provides an overview of the Argo program, what kind of data are available, and how the data are structured. The argo-access.ipynb provides an overview of several methods to retrieve Argo data.</p>
 </section>
-<section id="section-2-scikit-learn-replace-with-the-title-of-this-section-e-g-example-workflows">
-<h3>Section 2: Scikit-learn ( Replace with the title of this section, e.g. “Example workflows” )<a class="headerlink" href="#section-2-scikit-learn-replace-with-the-title-of-this-section-e-g-example-workflows" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “Example workflows include … “)</p>
+<section id="section-2-scikit-learn-workflows">
+<h3>Section 2: Scikit-learn Workflows<a class="headerlink" href="#section-2-scikit-learn-workflows" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>This section provides an overview of workflows using the sklearn package to conduct machine learning analyses on Argo data. The notebooks provide workflows on running regression and clustering (under construction) analyses.</p>
 </section>
 </section>
 <section id="running-the-notebooks">
@@ -570,8 +568,8 @@ jupyter<span class="w"> </span>lab
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-accessing-bgc-argo-replace-with-the-title-of-this-section-e-g-foundations">Section 1: Accessing BGC-Argo ( Replace with the title of this section, e.g. “Foundations” )</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-scikit-learn-replace-with-the-title-of-this-section-e-g-example-workflows">Section 2: Scikit-learn ( Replace with the title of this section, e.g. “Example workflows” )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-argo-foundations">Section 1: Argo Foundations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-scikit-learn-workflows">Section 2: Scikit-learn Workflows</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-notebooks">Running the Notebooks</a><ul class="nav section-nav flex-column">
@@ -593,9 +591,9 @@ jupyter<span class="w"> </span>lab
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -753,9 +751,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -790,7 +788,7 @@ By Sangmin Song
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12 June 2024.
+  Last updated on 14 June 2024.
   <br/>
 </p>
   </div>
@@ -844,7 +842,7 @@ By Sangmin Song
         
           By Sangmin Song.
         
-          Last updated on 12 June 2024.
+          Last updated on 14 June 2024.
         </p>
       </div>
     </div>
