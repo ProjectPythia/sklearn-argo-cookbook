@@ -37,3 +37,4 @@ dependencies:
 
   - pip: 
     - argovisHelpers==0.0.26
+    - matplotlib-label-lines

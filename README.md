@@ -14,11 +14,11 @@ This Project Pythia Cookbook covers two objectives:
 
 ## Motivation
 
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
+This cookbook provides an overview of how to use python to access Argo oceanographic data and how to use sklearn to perform machine learning analyses. Argo is a global observatory of _in situ_ robots that autonomously sample the ocean interior. It is an international collaborative effort, and provides a treasure trove of high quality, open-source data. However, there are many different ways to access Argo data, which can get confusing for users. This cookbook highlights some basic workflows to access and work with Argo data. 
 
 ## Authors
 
-[Song Sangmin](@song-sangmin), [Michael Chen](@second-author).
+[Song Sangmin](@song-sangmin), [Michael Chen](@mchen96).
 
 ### Contributors
 
@@ -28,8 +28,6 @@ This Project Pythia Cookbook covers two objectives:
 
 ## Structure
 
-(State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
-
 This cookbook is broken up into two main sections. 
 
 1. Argo Foundations
@@ -37,11 +35,11 @@ This cookbook is broken up into two main sections.
 
 ### Section 1: Argo Foundations
 
-(Add content for this section, e.g., "The foundational content includes ... ")
+This section contains two notebooks. argo-introductions.ipynb provides an overview of the Argo program, what kind of data are available, and how the data are structured. The argo-access.ipynb provides an overview of several methods to retrieve Argo data.
 
 ### Section 2: Scikit-learn Workflows
 
-(Add content for this section, e.g., "Example workflows include ... ")
+This section provides an overview of workflows using the sklearn package to conduct machine learning analyses on Argo data. The notebooks provide workflows on running regression and clustering (under construction) analyses.
 
 ## Running the Notebooks
 

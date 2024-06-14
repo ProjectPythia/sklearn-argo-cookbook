@@ -10,5 +10,5 @@ parts:
       - file: notebooks/argo-access
   - caption: Scikit-learn Workflows on Argo
     chapters:
-      - file: notebooks/sklearn-clustering
       - file: notebooks/sklearn-regression
+      - file: notebooks/sklearn-clustering
