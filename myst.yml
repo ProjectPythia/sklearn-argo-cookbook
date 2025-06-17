@@ -1,0 +1,30 @@
+version: 1
+extends:
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
+project:
+  title: Using sklearn with BGC-Argo ocean observations
+  authors:
+    - name: Sangmin Song
+  github: https://github.com/projectpythia/sklearn-argo-cookbook
+  copyright: '2024'
+  toc:
+    - file: README.md
+    - title: Preamble
+      children:
+        - file: notebooks/how-to-cite.md
+    - title: Argo Foundations
+      children:
+        - file: notebooks/argo-introduction.ipynb
+        - file: notebooks/argo-access.ipynb
+    - title: Scikit-learn Workflows on Argo
+      children:
+        - file: notebooks/sklearn-regression.ipynb
+        - file: notebooks/sklearn-clustering.ipynb
+  jupyter:
+      binder:
+        repo: projectpythia/sklearn-argo-cookbook
+site:
+  options:
+    logo: notebooks/images/logos/pythia_logo-white-rtext.svg
+    folders: true
+  template: book-theme
