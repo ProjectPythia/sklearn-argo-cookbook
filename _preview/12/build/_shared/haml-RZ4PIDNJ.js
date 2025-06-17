@@ -1,1 +1,1 @@
-import{a}from"/sklearn-argo-cookbook/build/_shared/chunk-OWPN56E4.js";import"/sklearn-argo-cookbook/build/_shared/chunk-5JQ5LNKE.js";import"/sklearn-argo-cookbook/build/_shared/chunk-2NH4LW52.js";export default a();
+import{a}from"/sklearn-argo-cookbook/_preview/12/build/_shared/chunk-OWPN56E4.js";import"/sklearn-argo-cookbook/_preview/12/build/_shared/chunk-5JQ5LNKE.js";import"/sklearn-argo-cookbook/_preview/12/build/_shared/chunk-2NH4LW52.js";export default a();
