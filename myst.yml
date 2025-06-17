@@ -1,11 +1,11 @@
 version: 1
 extends:
-  - https://raw.githubusercontent.com/projectpythia-mystmd/pythia-config/main/pythia.yml
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
 project:
   title: Using sklearn with BGC-Argo ocean observations
   authors:
     - name: Sangmin Song
-  github: https://github.com/projectpythia-mystmd/sklearn-argo-cookbook
+  github: https://github.com/projectpythia/sklearn-argo-cookbook
   copyright: '2024'
   toc:
     - file: README.md
@@ -22,7 +22,7 @@ project:
         - file: notebooks/sklearn-clustering.ipynb
   jupyter:
       binder:
-        repo: projectpythia-mystmd/sklearn-argo-cookbook
+        repo: projectpythia/sklearn-argo-cookbook
 site:
   options:
     logo: notebooks/images/logos/pythia_logo-white-rtext.svg
