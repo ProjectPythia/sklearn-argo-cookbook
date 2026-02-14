@@ -1,0 +1,278 @@
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mConnectionRefusedError[0m                    Traceback (most recent call last)
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:1268[0m, in [0;36mTCPConnector._wrap_create_connection[0;34m(self, addr_infos, req, timeout, client_error, *args, **kwargs)[0m
+[1;32m   1265[0m [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m ceil_timeout(
+[1;32m   1266[0m     timeout[38;5;241m.[39msock_connect, ceil_threshold[38;5;241m=[39mtimeout[38;5;241m.[39mceil_threshold
+[1;32m   1267[0m ):
+[0;32m-> 1268[0m     sock [38;5;241m=[39m [38;5;28;01mawait[39;00m aiohappyeyeballs[38;5;241m.[39mstart_connection(
+[1;32m   1269[0m         addr_infos[38;5;241m=[39maddr_infos,
+[1;32m   1270[0m         local_addr_infos[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_local_addr_infos,
+[1;32m   1271[0m         happy_eyeballs_delay[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_happy_eyeballs_delay,
+[1;32m   1272[0m         interleave[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_interleave,
+[1;32m   1273[0m         loop[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_loop,
+[1;32m   1274[0m         socket_factory[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_socket_factory,
+[1;32m   1275[0m     )
+[1;32m   1276[0m     [38;5;66;03m# Add ssl_shutdown_timeout for Python 3.11+ when SSL is used[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohappyeyeballs/impl.py:122[0m, in [0;36mstart_connection[0;34m(addr_infos, local_addr_infos, happy_eyeballs_delay, interleave, loop, socket_factory)[0m
+[1;32m    121[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(all_exceptions) [38;5;241m==[39m [38;5;241m1[39m:
+[0;32m--> 122[0m     [38;5;28;01mraise[39;00m first_exception
+[1;32m    123[0m [38;5;28;01melse[39;00m:
+[1;32m    124[0m     [38;5;66;03m# If they all have the same str(), raise one.[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohappyeyeballs/impl.py:73[0m, in [0;36mstart_connection[0;34m(addr_infos, local_addr_infos, happy_eyeballs_delay, interleave, loop, socket_factory)[0m
+[1;32m     72[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 73[0m     sock [38;5;241m=[39m [38;5;28;01mawait[39;00m _connect_sock(
+[1;32m     74[0m         current_loop,
+[1;32m     75[0m         exceptions,
+[1;32m     76[0m         addrinfo,
+[1;32m     77[0m         local_addr_infos,
+[1;32m     78[0m         [38;5;28;01mNone[39;00m,
+[1;32m     79[0m         socket_factory,
+[1;32m     80[0m     )
+[1;32m     81[0m     [38;5;28;01mbreak[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohappyeyeballs/impl.py:208[0m, in [0;36m_connect_sock[0;34m(loop, exceptions, addr_info, local_addr_infos, open_sockets, socket_factory)[0m
+[1;32m    207[0m             [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mno matching local address with [39m[38;5;132;01m{[39;00mfamily[38;5;132;01m=}[39;00m[38;5;124m found[39m[38;5;124m"[39m)
+[0;32m--> 208[0m [38;5;28;01mawait[39;00m loop[38;5;241m.[39msock_connect(sock, address)
+[1;32m    209[0m [38;5;28;01mreturn[39;00m sock
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/asyncio/selector_events.py:500[0m, in [0;36mBaseSelectorEventLoop.sock_connect[0;34m(self, sock, address)[0m
+[1;32m    499[0m [38;5;28mself[39m[38;5;241m.[39m_sock_connect(fut, sock, address)
+[0;32m--> 500[0m [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m fut
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/asyncio/selector_events.py:535[0m, in [0;36mBaseSelectorEventLoop._sock_connect_cb[0;34m(self, fut, sock, address)[0m
+[1;32m    533[0m     [38;5;28;01mif[39;00m err [38;5;241m!=[39m [38;5;241m0[39m:
+[1;32m    534[0m         [38;5;66;03m# Jump to any except clause below.[39;00m
+[0;32m--> 535[0m         [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m(err, [38;5;124mf[39m[38;5;124m'[39m[38;5;124mConnect call failed [39m[38;5;132;01m{[39;00maddress[38;5;132;01m}[39;00m[38;5;124m'[39m)
+[1;32m    536[0m [38;5;28;01mexcept[39;00m ([38;5;167;01mBlockingIOError[39;00m, [38;5;167;01mInterruptedError[39;00m):
+[1;32m    537[0m     [38;5;66;03m# socket is still registered, the callback will be retried later[39;00m
+
+[0;31mConnectionRefusedError[0m: [Errno 111] Connect call failed ('192.171.196.70', 443)
+
+The above exception was the direct cause of the following exception:
+
+[0;31mClientConnectorError[0m                      Traceback (most recent call last)
+Cell [0;32mIn[10], line 2[0m
+[1;32m      1[0m a_param [38;5;241m=[39m [38;5;124m'[39m[38;5;124mPSAL[39m[38;5;124m'[39m
+[0;32m----> 2[0m reftbl [38;5;241m=[39m [43mArgoNVSReferenceTables[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mtbl[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mR03[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m      3[0m param_info [38;5;241m=[39m reftbl[reftbl[[38;5;124m'[39m[38;5;124maltLabel[39m[38;5;124m'[39m][38;5;241m==[39ma_param][38;5;241m.[39miloc[[38;5;241m0[39m][38;5;241m.[39mto_dict()
+[1;32m      4[0m param_info
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/argopy/related/reference_tables.py:166[0m, in [0;36mArgoNVSReferenceTables.tbl[0;34m(self, rtid)[0m
+[1;32m    154[0m [38;5;250m[39m[38;5;124;03m"""Return an Argo Reference table[39;00m
+[1;32m    155[0m 
+[1;32m    156[0m [38;5;124;03mParameters[39;00m
+[0;32m   (...)[0m
+[1;32m    163[0m [38;5;124;03mclass:`pandas.DataFrame`[39;00m
+[1;32m    164[0m [38;5;124;03m"""[39;00m
+[1;32m    165[0m rtid [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_valid_ref(rtid)
+[0;32m--> 166[0m js [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[38;5;241;43m.[39;49m[43mopen_json[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_url[49m[43m([49m[43mrtid[49m[43m)[49m[43m)[49m
+[1;32m    167[0m df [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_jsConcept2df(js)
+[1;32m    168[0m [38;5;28;01mreturn[39;00m df
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/argopy/stores/filesystems.py:1375[0m, in [0;36mhttpstore.open_json[0;34m(self, url, **kwargs)[0m
+[1;32m   1373[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mdwn_opts[39m[38;5;124m"[39m [38;5;129;01min[39;00m kwargs:
+[1;32m   1374[0m     dwn_opts[38;5;241m.[39mupdate(kwargs[[38;5;124m"[39m[38;5;124mdwn_opts[39m[38;5;124m"[39m])
+[0;32m-> 1375[0m data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdownload_url[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mdwn_opts[49m[43m)[49m
+[1;32m   1377[0m js_opts [38;5;241m=[39m {}
+[1;32m   1378[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mjs_opts[39m[38;5;124m"[39m [38;5;129;01min[39;00m kwargs:
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/argopy/stores/filesystems.py:748[0m, in [0;36mhttpstore.download_url[0;34m(self, url, max_attempt, cat_opts, errors)[0m
+[1;32m    745[0m     [38;5;28;01mreturn[39;00m data, n_attempt
+[1;32m    747[0m url [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcurateurl(url)
+[0;32m--> 748[0m data, n [38;5;241m=[39m [43mmake_request[49m[43m([49m
+[1;32m    749[0m [43m    [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[43m,[49m
+[1;32m    750[0m [43m    [49m[43murl[49m[43m,[49m
+[1;32m    751[0m [43m    [49m[43mmax_attempt[49m[38;5;241;43m=[39;49m[43mmax_attempt[49m[43m,[49m
+[1;32m    752[0m [43m    [49m[43mcat_opts[49m[38;5;241;43m=[39;49m[43mcat_opts[49m[43m,[49m
+[1;32m    753[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[1;32m    754[0m [43m[49m[43m)[49m
+[1;32m    756[0m [38;5;28;01mif[39;00m data [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    757[0m     [38;5;28;01mif[39;00m errors [38;5;241m==[39m [38;5;124m"[39m[38;5;124mraise[39m[38;5;124m"[39m:
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/argopy/stores/filesystems.py:729[0m, in [0;36mhttpstore.download_url.<locals>.make_request[0;34m(ffs, url, n_attempt, max_attempt, cat_opts, errors)[0m
+[1;32m    727[0m [38;5;28;01mexcept[39;00m aiohttp[38;5;241m.[39mClientError [38;5;28;01mas[39;00m e:
+[1;32m    728[0m     [38;5;28;01mif[39;00m errors [38;5;241m==[39m [38;5;124m"[39m[38;5;124mraise[39m[38;5;124m"[39m:
+[0;32m--> 729[0m         [38;5;28;01mraise[39;00m e
+[1;32m    730[0m     [38;5;28;01melif[39;00m errors [38;5;241m==[39m [38;5;124m"[39m[38;5;124mignore[39m[38;5;124m"[39m:
+[1;32m    731[0m         log[38;5;241m.[39merror([38;5;124m"[39m[38;5;124mError: [39m[38;5;132;01m{e}[39;00m[38;5;124m"[39m)
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/argopy/stores/filesystems.py:700[0m, in [0;36mhttpstore.download_url.<locals>.make_request[0;34m(ffs, url, n_attempt, max_attempt, cat_opts, errors)[0m
+[1;32m    698[0m [38;5;28;01mif[39;00m n_attempt [38;5;241m<[39m[38;5;241m=[39m max_attempt:
+[1;32m    699[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 700[0m         data [38;5;241m=[39m [43mffs[49m[38;5;241;43m.[39;49m[43mcat_file[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mcat_opts[49m[43m)[49m
+[1;32m    701[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mFileNotFoundError[39;00m [38;5;28;01mas[39;00m e:
+[1;32m    702[0m         [38;5;28;01mif[39;00m errors [38;5;241m==[39m [38;5;124m"[39m[38;5;124mraise[39m[38;5;124m"[39m:
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/implementations/cached.py:473[0m, in [0;36mCachingFileSystem.__getattribute__.<locals>.<lambda>[0;34m(*args, **kw)[0m
+[1;32m    424[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m__getattribute__[39m([38;5;28mself[39m, item):
+[1;32m    425[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m {
+[1;32m    426[0m         [38;5;124m"[39m[38;5;124mload_cache[39m[38;5;124m"[39m,
+[1;32m    427[0m         [38;5;124m"[39m[38;5;124m_open[39m[38;5;124m"[39m,
+[0;32m   (...)[0m
+[1;32m    471[0m         [38;5;66;03m# all the methods defined in this class. Note `open` here, since[39;00m
+[1;32m    472[0m         [38;5;66;03m# it calls `_open`, but is actually in superclass[39;00m
+[0;32m--> 473[0m         [38;5;28;01mreturn[39;00m [38;5;28;01mlambda[39;00m [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkw: [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m,[49m[43m [49m[43mitem[49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__get__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m([49m
+[1;32m    474[0m [43m            [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkw[49m
+[1;32m    475[0m [43m        [49m[43m)[49m
+[1;32m    476[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124m__reduce_ex__[39m[38;5;124m"[39m]:
+[1;32m    477[0m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/spec.py:797[0m, in [0;36mAbstractFileSystem.cat_file[0;34m(self, path, start, end, **kwargs)[0m
+[1;32m    785[0m [38;5;250m[39m[38;5;124;03m"""Get the content of a file[39;00m
+[1;32m    786[0m 
+[1;32m    787[0m [38;5;124;03mParameters[39;00m
+[0;32m   (...)[0m
+[1;32m    794[0m [38;5;124;03mkwargs: passed to ``open()``.[39;00m
+[1;32m    795[0m [38;5;124;03m"""[39;00m
+[1;32m    796[0m [38;5;66;03m# explicitly set buffering off?[39;00m
+[0;32m--> 797[0m [38;5;28;01mwith[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m [38;5;28;01mas[39;00m f:
+[1;32m    798[0m     [38;5;28;01mif[39;00m start [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    799[0m         [38;5;28;01mif[39;00m start [38;5;241m>[39m[38;5;241m=[39m [38;5;241m0[39m:
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/implementations/cached.py:473[0m, in [0;36mCachingFileSystem.__getattribute__.<locals>.<lambda>[0;34m(*args, **kw)[0m
+[1;32m    424[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m__getattribute__[39m([38;5;28mself[39m, item):
+[1;32m    425[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m {
+[1;32m    426[0m         [38;5;124m"[39m[38;5;124mload_cache[39m[38;5;124m"[39m,
+[1;32m    427[0m         [38;5;124m"[39m[38;5;124m_open[39m[38;5;124m"[39m,
+[0;32m   (...)[0m
+[1;32m    471[0m         [38;5;66;03m# all the methods defined in this class. Note `open` here, since[39;00m
+[1;32m    472[0m         [38;5;66;03m# it calls `_open`, but is actually in superclass[39;00m
+[0;32m--> 473[0m         [38;5;28;01mreturn[39;00m [38;5;28;01mlambda[39;00m [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkw: [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m,[49m[43m [49m[43mitem[49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__get__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m([49m
+[1;32m    474[0m [43m            [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkw[49m
+[1;32m    475[0m [43m        [49m[43m)[49m
+[1;32m    476[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124m__reduce_ex__[39m[38;5;124m"[39m]:
+[1;32m    477[0m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/spec.py:1338[0m, in [0;36mAbstractFileSystem.open[0;34m(self, path, mode, block_size, cache_options, compression, **kwargs)[0m
+[1;32m   1336[0m [38;5;28;01melse[39;00m:
+[1;32m   1337[0m     ac [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mautocommit[39m[38;5;124m"[39m, [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_intrans)
+[0;32m-> 1338[0m     f [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_open[49m[43m([49m
+[1;32m   1339[0m [43m        [49m[43mpath[49m[43m,[49m
+[1;32m   1340[0m [43m        [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   1341[0m [43m        [49m[43mblock_size[49m[38;5;241;43m=[39;49m[43mblock_size[49m[43m,[49m
+[1;32m   1342[0m [43m        [49m[43mautocommit[49m[38;5;241;43m=[39;49m[43mac[49m[43m,[49m
+[1;32m   1343[0m [43m        [49m[43mcache_options[49m[38;5;241;43m=[39;49m[43mcache_options[49m[43m,[49m
+[1;32m   1344[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m   1345[0m [43m    [49m[43m)[49m
+[1;32m   1346[0m     [38;5;28;01mif[39;00m compression [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1347[0m         [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mfsspec[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompression[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m compr
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/implementations/cached.py:473[0m, in [0;36mCachingFileSystem.__getattribute__.<locals>.<lambda>[0;34m(*args, **kw)[0m
+[1;32m    424[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m__getattribute__[39m([38;5;28mself[39m, item):
+[1;32m    425[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m {
+[1;32m    426[0m         [38;5;124m"[39m[38;5;124mload_cache[39m[38;5;124m"[39m,
+[1;32m    427[0m         [38;5;124m"[39m[38;5;124m_open[39m[38;5;124m"[39m,
+[0;32m   (...)[0m
+[1;32m    471[0m         [38;5;66;03m# all the methods defined in this class. Note `open` here, since[39;00m
+[1;32m    472[0m         [38;5;66;03m# it calls `_open`, but is actually in superclass[39;00m
+[0;32m--> 473[0m         [38;5;28;01mreturn[39;00m [38;5;28;01mlambda[39;00m [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkw: [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m,[49m[43m [49m[43mitem[49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__get__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m([49m
+[1;32m    474[0m [43m            [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkw[49m
+[1;32m    475[0m [43m        [49m[43m)[49m
+[1;32m    476[0m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124m__reduce_ex__[39m[38;5;124m"[39m]:
+[1;32m    477[0m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/implementations/cached.py:733[0m, in [0;36mWholeFileCacheFileSystem._open[0;34m(self, path, mode, **kwargs)[0m
+[1;32m    731[0m             f2[38;5;241m.[39mwrite(data)
+[1;32m    732[0m [38;5;28;01melse[39;00m:
+[0;32m--> 733[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[38;5;241;43m.[39;49m[43mget_file[49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[43mfn[49m[43m)[49m
+[1;32m    734[0m [38;5;28mself[39m[38;5;241m.[39msave_cache()
+[1;32m    735[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_open(path, mode)
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/asyn.py:118[0m, in [0;36msync_wrapper.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    115[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(func)
+[1;32m    116[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mwrapper[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    117[0m     [38;5;28mself[39m [38;5;241m=[39m obj [38;5;129;01mor[39;00m args[[38;5;241m0[39m]
+[0;32m--> 118[0m     [38;5;28;01mreturn[39;00m [43msync[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mloop[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/asyn.py:103[0m, in [0;36msync[0;34m(loop, func, timeout, *args, **kwargs)[0m
+[1;32m    101[0m     [38;5;28;01mraise[39;00m FSTimeoutError [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mreturn_result[39;00m
+[1;32m    102[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+[0;32m--> 103[0m     [38;5;28;01mraise[39;00m return_result
+[1;32m    104[0m [38;5;28;01melse[39;00m:
+[1;32m    105[0m     [38;5;28;01mreturn[39;00m return_result
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/asyn.py:56[0m, in [0;36m_runner[0;34m(event, coro, result, timeout)[0m
+[1;32m     54[0m     coro [38;5;241m=[39m asyncio[38;5;241m.[39mwait_for(coro, timeout[38;5;241m=[39mtimeout)
+[1;32m     55[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 56[0m     result[[38;5;241m0[39m] [38;5;241m=[39m [38;5;28;01mawait[39;00m coro
+[1;32m     57[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+[1;32m     58[0m     result[[38;5;241m0[39m] [38;5;241m=[39m ex
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/fsspec/implementations/http.py:256[0m, in [0;36mHTTPFileSystem._get_file[0;34m(self, rpath, lpath, chunk_size, callback, **kwargs)[0m
+[1;32m    254[0m logger[38;5;241m.[39mdebug(rpath)
+[1;32m    255[0m session [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39mset_session()
+[0;32m--> 256[0m [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m session[38;5;241m.[39mget([38;5;28mself[39m[38;5;241m.[39mencode_url(rpath), [38;5;241m*[39m[38;5;241m*[39mkw) [38;5;28;01mas[39;00m r:
+[1;32m    257[0m     [38;5;28;01mtry[39;00m:
+[1;32m    258[0m         size [38;5;241m=[39m [38;5;28mint[39m(r[38;5;241m.[39mheaders[[38;5;124m"[39m[38;5;124mcontent-length[39m[38;5;124m"[39m])
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/client.py:1488[0m, in [0;36m_BaseRequestContextManager.__aenter__[0;34m(self)[0m
+[1;32m   1487[0m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m__aenter__[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m _RetType:
+[0;32m-> 1488[0m     [38;5;28mself[39m[38;5;241m.[39m_resp: _RetType [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_coro
+[1;32m   1489[0m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_resp[38;5;241m.[39m[38;5;21m__aenter__[39m()
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/client.py:770[0m, in [0;36mClientSession._request[0;34m(self, method, str_or_url, params, data, json, cookies, headers, skip_auto_headers, auth, allow_redirects, max_redirects, compress, chunked, expect100, raise_for_status, read_until_eof, proxy, proxy_auth, timeout, verify_ssl, fingerprint, ssl_context, ssl, server_hostname, proxy_headers, trace_request_ctx, read_bufsize, auto_decompress, max_line_size, max_field_size, middlewares)[0m
+[1;32m    767[0m     handler [38;5;241m=[39m _connect_and_send_request
+[1;32m    769[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 770[0m     resp [38;5;241m=[39m [38;5;28;01mawait[39;00m handler(req)
+[1;32m    771[0m [38;5;66;03m# Client connector errors should not be retried[39;00m
+[1;32m    772[0m [38;5;28;01mexcept[39;00m (
+[1;32m    773[0m     ConnectionTimeoutError,
+[1;32m    774[0m     ClientConnectorError,
+[1;32m    775[0m     ClientConnectorCertificateError,
+[1;32m    776[0m     ClientConnectorSSLError,
+[1;32m    777[0m ):
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/client.py:725[0m, in [0;36mClientSession._request.<locals>._connect_and_send_request[0;34m(req)[0m
+[1;32m    723[0m [38;5;28;01massert[39;00m [38;5;28mself[39m[38;5;241m.[39m_connector [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[1;32m    724[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 725[0m     conn [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_connector[38;5;241m.[39mconnect(
+[1;32m    726[0m         req, traces[38;5;241m=[39mtraces, timeout[38;5;241m=[39mreal_timeout
+[1;32m    727[0m     )
+[1;32m    728[0m [38;5;28;01mexcept[39;00m asyncio[38;5;241m.[39mTimeoutError [38;5;28;01mas[39;00m exc:
+[1;32m    729[0m     [38;5;28;01mraise[39;00m ConnectionTimeoutError(
+[1;32m    730[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mConnection timeout to host [39m[38;5;132;01m{[39;00mreq[38;5;241m.[39murl[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m    731[0m     ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mexc[39;00m
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:642[0m, in [0;36mBaseConnector.connect[0;34m(self, req, traces, timeout)[0m
+[1;32m    640[0m     [38;5;28;01mfor[39;00m trace [38;5;129;01min[39;00m traces:
+[1;32m    641[0m         [38;5;28;01mawait[39;00m trace[38;5;241m.[39msend_connection_create_start()
+[0;32m--> 642[0m proto [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_create_connection(req, traces, timeout)
+[1;32m    643[0m [38;5;28;01mif[39;00m traces:
+[1;32m    644[0m     [38;5;28;01mfor[39;00m trace [38;5;129;01min[39;00m traces:
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:1209[0m, in [0;36mTCPConnector._create_connection[0;34m(self, req, traces, timeout)[0m
+[1;32m   1207[0m     _, proto [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_create_proxy_connection(req, traces, timeout)
+[1;32m   1208[0m [38;5;28;01melse[39;00m:
+[0;32m-> 1209[0m     _, proto [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_create_direct_connection(req, traces, timeout)
+[1;32m   1211[0m [38;5;28;01mreturn[39;00m proto
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:1581[0m, in [0;36mTCPConnector._create_direct_connection[0;34m(self, req, traces, timeout, client_error)[0m
+[1;32m   1579[0m [38;5;28;01melse[39;00m:
+[1;32m   1580[0m     [38;5;28;01massert[39;00m last_exc [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[0;32m-> 1581[0m     [38;5;28;01mraise[39;00m last_exc
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:1550[0m, in [0;36mTCPConnector._create_direct_connection[0;34m(self, req, traces, timeout, client_error)[0m
+[1;32m   1545[0m server_hostname [38;5;241m=[39m (
+[1;32m   1546[0m     (req[38;5;241m.[39mserver_hostname [38;5;129;01mor[39;00m host)[38;5;241m.[39mrstrip([38;5;124m"[39m[38;5;124m.[39m[38;5;124m"[39m) [38;5;28;01mif[39;00m sslcontext [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[1;32m   1547[0m )
+[1;32m   1549[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1550[0m     transp, proto [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_wrap_create_connection(
+[1;32m   1551[0m         [38;5;28mself[39m[38;5;241m.[39m_factory,
+[1;32m   1552[0m         timeout[38;5;241m=[39mtimeout,
+[1;32m   1553[0m         ssl[38;5;241m=[39msslcontext,
+[1;32m   1554[0m         addr_infos[38;5;241m=[39maddr_infos,
+[1;32m   1555[0m         server_hostname[38;5;241m=[39mserver_hostname,
+[1;32m   1556[0m         req[38;5;241m=[39mreq,
+[1;32m   1557[0m         client_error[38;5;241m=[39mclient_error,
+[1;32m   1558[0m     )
+[1;32m   1559[0m [38;5;28;01mexcept[39;00m (ClientConnectorError, asyncio[38;5;241m.[39mTimeoutError) [38;5;28;01mas[39;00m exc:
+[1;32m   1560[0m     last_exc [38;5;241m=[39m exc
+
+File [0;32m~/micromamba/envs/sklearn-argo-dev/lib/python3.9/site-packages/aiohttp/connector.py:1291[0m, in [0;36mTCPConnector._wrap_create_connection[0;34m(self, addr_infos, req, timeout, client_error, *args, **kwargs)[0m
+[1;32m   1289[0m [38;5;28;01mif[39;00m exc[38;5;241m.[39merrno [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;28misinstance[39m(exc, asyncio[38;5;241m.[39mTimeoutError):
+[1;32m   1290[0m     [38;5;28;01mraise[39;00m
+[0;32m-> 1291[0m [38;5;28;01mraise[39;00m client_error(req[38;5;241m.[39mconnection_key, exc) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mexc[39;00m
+
+[0;31mClientConnectorError[0m: Cannot connect to host vocab.nerc.ac.uk:443 ssl:default [Connect call failed ('192.171.196.70', 443)]
